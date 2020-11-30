@@ -1,11 +1,13 @@
 from time import sleep
+from random import randint
+
 
 def login(driver, usr, pwd):
 	# open the Instagram login page
 	driver.get('https://www.instagram.com/accounts/login/?source=auth_switcher')
 
 	# some shut-eye :)
-	sleep(5)
+	sleep(randint(3, 5))
 
 	# find username & password fields and set their input
 	username = driver.find_element_by_name('username')
@@ -18,8 +20,17 @@ def login(driver, usr, pwd):
 	submit.click()
 
 	# some shut-eye :)
-	sleep(5)
+	sleep(randint(3, 5))
 
-	# in case you get a popup after logging in, press not now
-	not_now = driver.find_element_by_css_selector('body > div.RnEpo.Yx5HN > div > div > div > div.mt3GC > button.aOOlW.HoLwm')
-	not_now.click()
+	try:
+		# in case you get a popup to save your login info
+		element = driver.find_element_by_css_selector('#react-root > section > main > div > div > div > div > button')
+		if (element.text == 'Not Now'):
+			element.click()
+
+		# notifications popup, press not now
+		element = driver.find_element_by_css_selector('body > div.RnEpo.Yx5HN > div > div > div > div.mt3GC > button.aOOlW.HoLwm')
+		if (element.text == 'Not Now'):
+			element.click()
+	except:
+		pass

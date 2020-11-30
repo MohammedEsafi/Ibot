@@ -28,11 +28,11 @@ it's easy to set up, ```first``` open ```config.json``` file from cloning conten
 }
 ```
 
-|          |                                                         |
-|----------|---------------------------------------------------------|
-| duration | sleep time by seconds to prevent issues with the server |
-| range    | of follow-up for every hashtag                          |
-| hashtags | list of targeted hashtags                               |
+| properties |                        usage                            |
+|------------|---------------------------------------------------------|
+| duration   | sleep time by seconds to prevent issues with the server |
+| range      | of follow-up for every hashtag                          |
+| hashtags   | list of targeted hashtags                               |
 
 ## Running
 

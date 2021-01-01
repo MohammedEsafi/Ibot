@@ -1,6 +1,6 @@
 # Ibot
 
-Python script hat can automatically follow users based on hashtag list
+Python script that can automatically follow users based on hashtag list
 
 ## Installation
 
